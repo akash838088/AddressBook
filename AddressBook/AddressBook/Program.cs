@@ -16,22 +16,32 @@ namespace AddressBookProgram
             while (flag)
             {
                 Console.WriteLine("Select 1 : To Create Contact");
-                Console.WriteLine("Select 2 : To Exit Creating Contact");
+                Console.WriteLine("Select 2 : To Edit Created Contact");
+                Console.WriteLine("Select 3 : To Display Existing Contact");
+                Console.WriteLine("Select 4 : To Exit Creating Contact");
+                Console.WriteLine("Select Option");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
                     case 1:
-                        Console.WriteLine("");
+                        Console.WriteLine("Add New Contact");
                         addBook.CreateContact();
+                        break;
+                    case 2:
+                        Console.WriteLine("Edit Contact");
+                        addBook.EditContact();
+                        break;
+                    case 3:
+                        Console.WriteLine("Display Contact Details");
                         addBook.Display();
                         Console.ReadLine();
                         break;
-                    case 2:
+                    case 4:
                         flag = false;
                         break;
                 }
-            }
 
+            }
         }
     }
 }
