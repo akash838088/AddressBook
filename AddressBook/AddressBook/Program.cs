@@ -1,45 +1,47 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace AddressBookProgram
+namespace AddressBookSystem
 {
-    public class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Address Book problem");
-            AddressBook addBook = new AddressBook();
+            AddressBook addressBook = new AddressBook();
+            Console.WriteLine("Welcome to Address Book");
             bool flag = true;
+
             while (flag)
             {
-                Console.WriteLine("Select 1 : To Create Contact");
-                Console.WriteLine("Select 2 : To Edit Created Contact");
-                Console.WriteLine("Select 3 : To Display Existing Contact");
-                Console.WriteLine("Select 4 : To Delete Existing Contact");
-                Console.WriteLine("Select 5 : To Exit Creating Contact");
-                Console.WriteLine("Select Option");
+                Console.WriteLine("\n1. Create Contact");
+                Console.WriteLine("2. Display All Contact");
+                Console.WriteLine("3. Edit The contact");
+                Console.WriteLine("4. Delete The contact");
+                Console.WriteLine("5. Exit the program");
+                Console.Write("Enter option: ");
                 int option = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("");
+
                 switch (option)
                 {
-                    case 1:
-                        Console.WriteLine("Add New Contact");
-                        addBook.CreateContact();
-                        break;
-                    case 2:
-                        Console.WriteLine("Edit Contact");
-                        addBook.EditContact();
-                        break;
+                    case 1: addressBook.CreatContact(); break;
+                    case 2: addressBook.Display(); break;
                     case 3:
-                        Console.WriteLine("Display Contact Details");
-                        addBook.Display();
-                        Console.ReadLine();
+                        Console.Write("enter the name of contact to Edit: ");
+                        string name = Console.ReadLine();
+                        addressBook.Edit(name);
+                        addressBook.Display();
                         break;
+
                     case 4:
-                        Console.WriteLine("Delete Contact");
-                        addBook.DeleteContact();
+                        Console.Write("enter the name of contact to Delete: ");
+                        name = Console.ReadLine();
+                        addressBook.Delete(name);
                         break;
-                    case 5:
-                        flag = false;
-                        break;
+                    case 5: flag = false; break;
                 }
             }
         }
