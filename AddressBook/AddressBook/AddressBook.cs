@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AddressBookSystem
 {
@@ -136,6 +130,17 @@ namespace AddressBookSystem
                 {
                     Console.WriteLine("Contact name not found ");
                 }
+            }
+        }
+
+        public void SearchByCity()
+        {
+            Console.Write("Enter the City Name: ");
+            string CityName = Console.ReadLine();
+            Console.WriteLine("All the Contact of: " + CityName);
+            foreach (var contact in contactsList.FindAll(x => x.City == CityName))
+            {
+                Console.WriteLine("Name: " + contact.FirstName + " " + contact.LastName);
             }
         }
     }
