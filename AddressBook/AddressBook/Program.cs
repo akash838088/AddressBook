@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AddressBookSystem
 {
@@ -23,8 +19,10 @@ namespace AddressBookSystem
                 Console.WriteLine("5. Search By city");
                 Console.WriteLine("6. view By city");
                 Console.WriteLine("7. Count By city");
-                Console.WriteLine("8. Sort Address book");
-                Console.WriteLine("9. Exit the program");
+                Console.WriteLine("8. Sort Address book By First Name");
+                Console.WriteLine("9. Sort Address book By City Name");
+                Console.WriteLine("10. Sort Address book By State Name");
+                Console.WriteLine("11. Exit the program");
 
                 Console.Write("\nEnter option: ");
                 int option = Convert.ToInt32(Console.ReadLine());
@@ -54,7 +52,9 @@ namespace AddressBookSystem
                     case 6: addressBook.ViewByCity(); break;
                     case 7: addressBook.CountByCity(); break;
                     case 8: addressBook.SortAddressBookByFirstName(); break;
-                    case 9: flag = false; break;
+                    case 9: addressBook.SortAddressBookByCity(); break;
+                    case 10: addressBook.SortAddressBookByState(); break;
+                    case 11: flag = false; break;
                 }
             }
         }
