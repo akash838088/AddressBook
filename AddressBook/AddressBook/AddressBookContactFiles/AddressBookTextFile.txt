@@ -1,0 +1,21 @@
+﻿
+Contact Details
+
+
+First Name: akash
+Last Name: girase
+Address: karve nagar
+City: pune
+State: mh
+Zip Code: 411052
+PhoneNumber: 838088
+E mail: akash@gmail.com
+
+First Name: darshu
+Last Name: rajput
+Address: aayodhya nagar
+City: shahada
+State: mh
+Zip Code: 425409
+PhoneNumber: 12345678
+E mail: darshu@gmail.com
