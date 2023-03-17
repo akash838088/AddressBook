@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 
 namespace AddressBookSystem
 {
@@ -194,8 +193,23 @@ namespace AddressBookSystem
         {
             Console.Write("Enter the City Name: ");
             string CityName = Console.ReadLine();
-            int count = addressBookDictonaryByCity[CityName].Count(x => x.City == CityName);
+            int count = addressBookDictonaryByCity[CityName].Count();
             Console.WriteLine("\nCity Name : " + CityName + ": No of Contact : " + count);
+        }
+
+        public void SortAddressBookByFirstName()
+        {
+            foreach (var contact in addressBookDictonary.OrderBy(x => x.Value.FirstName))
+            {
+                Console.WriteLine("Last Name: " + contact.Value.FirstName);
+                Console.WriteLine("Last Name: " + contact.Value.LastName);
+                Console.WriteLine("Address: " + contact.Value.Address);
+                Console.WriteLine("City: " + contact.Value.City);
+                Console.WriteLine("State: " + contact.Value.State);
+                Console.WriteLine("Zip Code: " + contact.Value.Zipcode);
+                Console.WriteLine("PhoneNumber: " + contact.Value.PhoneNumber);
+                Console.WriteLine("E mail: " + contact.Value.Email);
+            }
         }
     }
 }
